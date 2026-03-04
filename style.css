@@ -280,8 +280,8 @@ main {
 /* === HERO SECTION === */
 .hero {
     position: relative;
-    padding-top: 180px;
-    /* Increased to push text lower relative to background word */
+    padding-top: 150px;
+    /* Slightly raised from 180px */
     padding-bottom: 80px;
     overflow: hidden;
 }
@@ -1749,6 +1749,11 @@ main {
     z-index: 2;
 }
 
+.facade-badge svg {
+    width: 16px;
+    height: 16px;
+}
+
 .map-details {
     background: white;
     padding: 30px;
@@ -1787,7 +1792,7 @@ main {
     color: var(--color-text-dark);
 }
 
-/* Working Hours inside CTA */
+/* Working Hours inside CTA Block */
 .working-hours-block {
     text-align: center;
     margin-top: 25px;
@@ -2599,8 +2604,8 @@ main {
     }
 
     .hero {
-        padding-top: 140px !important;
-        /* Pushed lower for mobile as well */
+        padding-top: 120px !important;
+        /* Slightly raised from 140px */
     }
 
     .hero__content {
@@ -2707,7 +2712,7 @@ main {
     }
 
     .hero {
-        padding-top: 140px !important;
+        padding-top: 120px !important;
     }
 
     .product-title {
