@@ -133,7 +133,7 @@ body {
     flex-direction: column;
     align-items: flex-end;
     gap: 4px;
-    min-width: max-content;
+    /* min-width removed — was max-content which causes overflow on mobile */
 }
 
 .header__schedule {
@@ -1214,7 +1214,8 @@ main {
 
 .before-after-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    /* FIX: Use min() to prevent cards from exceeding viewport on mobile */
+    grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr));
     gap: 30px;
 }
 
@@ -2367,7 +2368,8 @@ main {
     }
 
     .review-card {
-        flex: 0 0 300px;
+        /* FIX: Size review cards to fit within viewport */
+        flex: 0 0 calc(100vw - 60px);
         padding: 30px 20px;
     }
 }
@@ -2569,21 +2571,23 @@ main {
 
     .header__socials {
         display: flex;
-        gap: 10px;
+        gap: 8px;
     }
 
     .header__socials a {
-        width: 36px;
-        height: 36px;
+        /* FIX: Ensure 44px minimum touch target for accessibility */
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
         background: #FFFFFF;
         padding: 0;
-        border-radius: 8px;
+        border-radius: 10px;
         transition: transform 0.2s ease;
         display: flex;
         justify-content: center;
         align-items: center;
         box-shadow: none;
-        /* Already flat per previous change, ensuring it stays flat */
     }
 
     .header__socials a:hover {
@@ -2591,12 +2595,15 @@ main {
     }
 
     .header__socials a img {
-        width: 28px;
-        height: 28px;
+        width: 24px;
+        height: 24px;
     }
 
     .burger-btn {
         display: flex;
+        /* FIX: Ensure 44px minimum touch target for burger button */
+        min-width: 44px;
+        min-height: 44px;
     }
 
     .mobile-menu-overlay {
@@ -2725,8 +2732,9 @@ main {
     }
 
     .product-actions {
-        flex-direction: row;
-        align-items: flex-start;
+        /* FIX: Stack CTA buttons vertically to prevent horizontal overflow */
+        flex-direction: column;
+        align-items: stretch;
         justify-content: flex-start;
         width: 100%;
         gap: 10px;
@@ -2746,6 +2754,8 @@ main {
         width: 100%;
         padding: 16px 20px;
         font-size: 14px;
+        /* FIX: Ensure minimum 44px touch target height */
+        min-height: 44px;
     }
 
     .hero__background-text {
@@ -2940,4 +2950,352 @@ main {
 
 .delay-500 {
     transition-delay: 500ms;
+}
+
+/* =============================================
+   MOBILE RESPONSIVE FIXES (≤480px)
+   Comprehensive fixes for small phone screens
+   ============================================= */
+@media (max-width: 480px) {
+
+    /* FIX: Reduce container padding to gain horizontal space on small screens */
+    .container {
+        padding: 0 16px;
+    }
+
+    .header .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    /* FIX: Cap hero background text to prevent horizontal overflow */
+    .hero__background-text {
+        font-size: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        letter-spacing: -4px;
+        white-space: nowrap;
+    }
+
+    /* FIX: Scale down product title for narrow screens */
+    .product-title {
+        font-size: 32px;
+    }
+
+    .product-subtitle {
+        font-size: 15px;
+    }
+
+    .brand-name {
+        font-size: 16px;
+    }
+
+    /* FIX: Reduce section padding on mobile for better vertical rhythm */
+    .services {
+        padding: 60px 0;
+    }
+
+    .services__lead {
+        margin-top: 0;
+        margin-bottom: 30px;
+        font-size: 14px;
+    }
+
+    /* FIX: Reduce price card padding to prevent content clipping */
+    .price-card {
+        padding: 20px 16px;
+    }
+
+    /* FIX: Allow price values to wrap if needed */
+    .price-list li strong {
+        white-space: normal;
+        text-align: right;
+    }
+
+    .price-list li {
+        font-size: 12px;
+    }
+
+    /* FIX: Reduce price modifier padding */
+    .price-modifier {
+        padding: 14px 16px;
+        gap: 12px;
+    }
+
+    .price-modifier__badge {
+        font-size: 18px;
+        min-width: 56px;
+        padding: 6px 8px;
+    }
+
+    /* FIX: Scale down section titles to prevent overflow on narrow screens */
+    .section-title {
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+
+    .section-subtitle {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .section-header {
+        margin-bottom: 30px;
+    }
+
+    /* FIX: Reduce timeline padding and time-value size */
+    .timeline {
+        padding: 40px 0;
+    }
+
+    .time-value {
+        font-size: 36px;
+    }
+
+    .timeline-card {
+        padding: 20px 16px;
+    }
+
+    /* FIX: Reduce benefit card padding for mobile */
+    .benefit-item {
+        padding: 20px 16px;
+    }
+
+    /* FIX: Process section padding */
+    .process-section {
+        padding: 40px 0 30px 0;
+    }
+
+    /* FIX: Materials section padding */
+    .materials-section {
+        padding: 60px 0;
+    }
+
+    .materials-grid {
+        margin-top: 30px;
+    }
+
+    .material-card {
+        padding: 20px 16px;
+    }
+
+    /* FIX: Insurance section padding */
+    .insurance-section {
+        padding: 60px 0;
+    }
+
+    .insurance-card {
+        padding: 25px 16px;
+    }
+
+    /* FIX: Guarantee box padding for narrow screens */
+    .guarantee-box {
+        padding: 24px 16px;
+        border-radius: 12px;
+    }
+
+    .guarantee-grid {
+        gap: 20px;
+        margin: 30px 0 20px 0;
+    }
+
+    .guarantee-section {
+        padding: 60px 0;
+    }
+
+    /* FIX: Guarantee CTA button sizing */
+    .guarantee-cta .btn-shop {
+        font-size: 12px;
+        padding: 14px 20px;
+        letter-spacing: 1px;
+    }
+
+    /* FIX: FAQ section padding */
+    .faq-section {
+        padding: 60px 0;
+    }
+
+    .faq-container {
+        margin-top: 30px;
+    }
+
+    .faq-item__question {
+        font-size: 15px;
+    }
+
+    /* FIX: Reviews section — hide nav arrows that clip on small screens */
+    .reviews-section {
+        padding: 60px 0;
+    }
+
+    .reviews-slider-container {
+        padding: 0 5px;
+    }
+
+    .review-nav-arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .review-prev {
+        left: 0;
+    }
+
+    .review-next {
+        right: 0;
+    }
+
+    /* FIX: Contacts section */
+    .contacts {
+        padding: 50px 0;
+    }
+
+    .contacts__background-text {
+        font-size: 24vw;
+    }
+
+    .v3-card {
+        padding: 24px 16px;
+    }
+
+    .v3-title {
+        font-size: 22px;
+    }
+
+    .v3-desc {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+    .v3-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    /* FIX: Map card address layout */
+    .map-card-address {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .map-route-btn {
+        padding: 12px 16px;
+        font-size: 13px;
+    }
+
+    .map-card {
+        height: 350px;
+    }
+
+    /* FIX: Footer padding */
+    .footer {
+        padding: 40px 0;
+        margin-top: 30px;
+    }
+
+    .footer__nav {
+        gap: 12px;
+    }
+
+    .footer__nav a {
+        font-size: 11px;
+    }
+
+    /* FIX: Mobile menu link touch targets */
+    .mobile-menu-overlay a {
+        min-height: 44px;
+        padding: 14px 0;
+    }
+
+    /* FIX: FAB buttons positioning for small screens */
+    .fab-v2-container {
+        bottom: 16px;
+        right: 16px;
+    }
+
+    .fab-v2-call {
+        padding: 10px 14px;
+    }
+
+    .fab-v2-call-text strong {
+        font-size: 13px;
+    }
+
+    .fab-v2-call-text span {
+        font-size: 8px;
+    }
+
+    /* FIX: Working hours block in contacts */
+    .working-hours-block {
+        padding: 14px;
+    }
+
+    .working-hours-value {
+        font-size: 14px;
+    }
+
+    /* FIX: Before/after gallery padding adjustment */
+    .before-after {
+        padding: 50px 0;
+    }
+
+    .comparison-card {
+        border-radius: 8px;
+    }
+
+    /* FIX: Payment card layout */
+    .payment-card {
+        padding: 16px;
+    }
+
+    .payment-card__icon {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+/* =============================================
+   EXTRA SMALL SCREENS (≤320px)
+   Addresses the narrowest phones
+   ============================================= */
+@media (max-width: 320px) {
+    .container {
+        padding: 0 12px;
+    }
+
+    .header .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .product-title {
+        font-size: 28px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .hero__background-text {
+        font-size: 56px;
+    }
+
+    .v3-title {
+        font-size: 20px;
+    }
+
+    /* FIX: Tighter price card styling for 320px */
+    .price-card {
+        padding: 16px 12px;
+    }
+
+    .price-list li {
+        font-size: 11px;
+        gap: 6px;
+    }
+
+    .review-card {
+        flex: 0 0 calc(100vw - 40px);
+        padding: 24px 16px;
+    }
 }
