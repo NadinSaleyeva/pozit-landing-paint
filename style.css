@@ -70,6 +70,8 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    position: relative;
+    /* Added for absolute centering of nav */
 }
 
 .header .container {
@@ -80,10 +82,6 @@ body {
 .header__left {
     display: flex;
     align-items: center;
-    gap: 25px;
-    /* Compressing logo-nav gap */
-    min-width: 0;
-    /* Allow shrinking */
 }
 
 .header__logo-link {
@@ -100,25 +98,30 @@ body {
 
 .header__nav {
     display: flex;
-    gap: 20px;
-    /* Compressing nav gaps */
+    gap: 35px;
+    /* Modern wide spacing */
     align-items: center;
-    min-width: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .header__nav a {
     text-decoration: none;
     color: var(--color-text-dark);
-    font-size: 11px;
-    /* Slightly smaller to fit better */
+    font-size: 13px;
     font-weight: 600;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.8px;
     white-space: nowrap;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
+    padding: 6px 14px;
+    border-radius: 99px;
 }
 
 .header__nav a:hover {
     color: var(--color-primary-red);
+    background: rgba(206, 53, 60, 0.05);
+    /* Subtle pill background on hover */
 }
 
 .text-red {
@@ -138,8 +141,6 @@ body {
     color: var(--color-text-muted);
     font-weight: 500;
     white-space: nowrap;
-    margin-right: 25px;
-    /* Separate from social icons */
 }
 
 .header__contacts-row {
