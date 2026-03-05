@@ -1509,6 +1509,9 @@ main {
     letter-spacing: -8px;
     text-transform: uppercase;
     font-family: var(--font-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
 }
 
 .contacts__main-row {
@@ -1530,6 +1533,8 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .v3-title {
