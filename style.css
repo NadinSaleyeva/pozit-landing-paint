@@ -52,12 +52,15 @@ body {
     right: 0;
     width: 100%;
     z-index: 1000;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px) saturate(150%);
+    -webkit-backdrop-filter: blur(8px) saturate(150%);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
 }
 
 .header.is-scrolled {
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.85);
     /* Higher transparency for "glass" look */
     backdrop-filter: blur(12px) saturate(180%);
     -webkit-backdrop-filter: blur(12px) saturate(180%);
@@ -94,6 +97,7 @@ body {
 
 .logo-img {
     height: 40px;
+    filter: drop-shadow(0 1px 3px rgba(255, 255, 255, 0.9));
 }
 
 .header__nav {
@@ -116,6 +120,7 @@ body {
     transition: all 0.3s ease;
     padding: 6px 14px;
     border-radius: 99px;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .header__nav a:hover {
@@ -141,6 +146,7 @@ body {
     color: var(--color-text-muted);
     font-weight: 500;
     white-space: nowrap;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .header__contacts-row {
@@ -150,12 +156,13 @@ body {
 }
 
 .header__phone {
-    font-size: 15px;
-    font-weight: 800;
+    font-size: 13px;
+    font-weight: 600;
     color: var(--color-text-dark);
     text-decoration: none;
-    letter-spacing: -0.5px;
+    letter-spacing: 0.8px;
     transition: color 0.2s ease;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .header__phone:hover {
@@ -166,6 +173,7 @@ body {
     width: 2px;
     height: 16px;
     background-color: var(--color-primary-red);
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.9);
 }
 
 .header__socials {
@@ -181,6 +189,7 @@ body {
     text-decoration: none;
     transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease;
     display: flex;
+    filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.8));
 }
 
 .header__socials a:hover {
@@ -218,9 +227,10 @@ body {
 .burger-btn span {
     display: block;
     width: 18px;
-    height: 2px;
+    height: 1px;
     background: #333;
     transition: 0.3s;
+    box-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
 }
 
 .burger-btn.active span:nth-child(1) {
@@ -262,9 +272,10 @@ body {
 
 .mobile-menu-overlay a {
     text-decoration: none;
-    color: #333;
-    font-size: 14px;
+    color: var(--color-text-dark);
+    font-size: 13px;
     font-weight: 600;
+    letter-spacing: 0.8px;
     padding: 12px 0;
     border-bottom: 1px solid #F0F0F0;
     display: flex;
@@ -284,6 +295,13 @@ main {
     /* Slightly raised from 180px */
     padding-bottom: 80px;
     overflow: hidden;
+    min-height: 600px;
+    background-image:
+        linear-gradient(to right, #ffffff 25%, rgba(255, 255, 255, 0.6) 45%, transparent 70%),
+        url('painter-hero.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .hero__background-text {
@@ -345,7 +363,7 @@ main {
     max-width: 520px;
     margin-bottom: 40px;
     text-align: left;
-    letter-spacing: -0.5px;
+    letter-spacing: 0;
     line-height: 1.4;
 }
 
@@ -361,20 +379,18 @@ main {
     padding: 16px 30px;
     font-weight: 700;
     font-size: 15px;
-    /* Slightly smaller but cleaner */
     text-transform: uppercase;
     letter-spacing: 2px;
-    /* Elegant spacing */
     border-radius: 6px;
     transition: all 0.2s ease;
     white-space: nowrap;
-    /* Prevent text wrapping */
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     font-family: var(--font-primary);
-    /* Cleaner, more professional Montserrat */
+    width: 240px;
+    box-sizing: border-box;
 }
 
 .btn-shop {
@@ -2474,10 +2490,6 @@ main {
     .header__nav {
         gap: 16px;
     }
-
-    .header__nav a {
-        font-size: 11px;
-    }
 }
 
 @media (max-width: 1280px) {
@@ -2497,10 +2509,6 @@ main {
         gap: 12px;
     }
 
-    .header__nav a {
-        font-size: 10px;
-    }
-
     .header__schedule {
         font-size: 9px;
         margin-right: 10px;
@@ -2513,7 +2521,6 @@ main {
     }
 
     .header__nav a {
-        font-size: 9px;
         letter-spacing: 0;
     }
 
@@ -2580,7 +2587,7 @@ main {
         height: 44px;
         min-width: 44px;
         min-height: 44px;
-        background: #FFFFFF;
+        background: transparent;
         padding: 0;
         border-radius: 10px;
         transition: transform 0.2s ease;
@@ -2612,7 +2619,7 @@ main {
 
     .hero {
         padding-top: 120px !important;
-        /* Slightly raised from 140px */
+        background-position: 75% center;
     }
 
     .hero__content {
@@ -2720,6 +2727,7 @@ main {
 
     .hero {
         padding-top: 120px !important;
+        background-position: 70% center;
     }
 
     .product-title {
@@ -2734,7 +2742,7 @@ main {
     .product-actions {
         /* FIX: Stack CTA buttons vertically to prevent horizontal overflow */
         flex-direction: column;
-        align-items: stretch;
+        align-items: flex-start;
         justify-content: flex-start;
         width: 100%;
         gap: 10px;
@@ -2751,10 +2759,10 @@ main {
 
     .btn-shop,
     .price-box {
-        width: 100%;
+        width: 300px;
+        max-width: 100%;
         padding: 16px 20px;
         font-size: 14px;
-        /* FIX: Ensure minimum 44px touch target height */
         min-height: 44px;
     }
 
