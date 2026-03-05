@@ -469,6 +469,8 @@ main {
     z-index: 5;
     margin-top: -30px;
     /* Slight overlap with hero for better flow */
+    width: 100%;
+    overflow: hidden;
 }
 
 .benefits__grid {
@@ -583,6 +585,8 @@ main {
 .services {
     padding: 100px 0;
     background: var(--color-bg);
+    width: 100%;
+    overflow: hidden;
 }
 
 .services__lead {
@@ -1223,6 +1227,8 @@ main {
 .before-after {
     padding: 100px 0;
     background-color: var(--color-white);
+    width: 100%;
+    overflow: hidden;
 }
 
 .section-header {
@@ -1403,6 +1409,8 @@ main {
     padding: 60px 0;
     margin-top: 60px;
     background-color: transparent;
+    width: 100%;
+    overflow: hidden;
 }
 
 .header__inner {
@@ -1880,6 +1888,8 @@ main {
 .process-section {
     padding: 80px 0 60px 0;
     background: var(--color-bg);
+    width: 100%;
+    overflow: hidden;
 }
 
 .process-row {
@@ -1971,6 +1981,8 @@ main {
 .materials-section {
     padding: 100px 0;
     background: white;
+    width: 100%;
+    overflow: hidden;
 }
 
 .materials-grid {
@@ -2035,6 +2047,8 @@ main {
 .insurance-section {
     padding: 100px 0;
     background: #FDFDFD;
+    width: 100%;
+    overflow: hidden;
 }
 
 .insurance-grid {
@@ -2082,6 +2096,8 @@ main {
 .guarantee-section {
     padding: 100px 0;
     background: var(--color-bg);
+    width: 100%;
+    overflow: hidden;
 }
 
 .guarantee-box {
@@ -2153,6 +2169,8 @@ main {
 .faq-section {
     padding: 100px 0;
     background: white;
+    width: 100%;
+    overflow: hidden;
 }
 
 .faq-container {
@@ -2268,6 +2286,8 @@ main {
 .reviews-section {
     padding: 100px 0;
     background: var(--color-bg);
+    width: 100%;
+    overflow: hidden;
 }
 
 .reviews-slider-container {
