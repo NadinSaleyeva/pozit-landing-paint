@@ -1255,6 +1255,8 @@ main {
     letter-spacing: 2px;
     line-height: 1;
     text-transform: uppercase;
+    max-width: 100%;
+    word-wrap: break-word;
 }
 
 .section-title span {
