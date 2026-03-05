@@ -1493,6 +1493,7 @@ main {
     background-color: var(--color-bg);
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
 .contacts__background-text {
@@ -1660,6 +1661,8 @@ main {
     padding: 0 0 80px 0;
     /* Padding below the main contacts */
     background: var(--color-bg);
+    width: 100%;
+    overflow: hidden;
 }
 
 .map-layout {
