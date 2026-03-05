@@ -365,9 +365,10 @@ main {
     line-height: 1;
     color: var(--color-text-dark);
     margin-bottom: 20px;
-    margin-left: -4px;
-    /* Compensating for the letter 'П' visual offset */
+    margin-left: 0;
+    /* Removed negative margin to prevent overflow */
     padding-left: 0;
+    max-width: 100%;
 }
 
 .product-subtitle {
