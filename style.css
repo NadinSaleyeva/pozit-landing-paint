@@ -34,6 +34,11 @@ body {
     width: 100%;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .wrapper {
     min-height: 100vh;
     display: flex;
@@ -1005,11 +1010,13 @@ main {
     flex-direction: column;
     gap: 12px;
     width: 150px;
+    max-width: 100%;
     cursor: pointer;
 }
 
 .gallery-item img {
     width: 100%;
+    max-width: 100%;
     object-fit: contain;
     mix-blend-mode: multiply;
     transition: transform 0.3s ease;
