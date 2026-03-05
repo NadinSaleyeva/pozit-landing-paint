@@ -2576,6 +2576,10 @@ main {
         justify-content: flex-end;
     }
 
+    .header__phone {
+        display: none;
+    }
+
     .header__socials {
         display: flex;
         gap: 8px;
