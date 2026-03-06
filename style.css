@@ -2125,6 +2125,22 @@ main {
     min-height: 280px;
 }
 
+.materials-compact-card--text {
+    align-items: flex-start;
+    text-align: left;
+    justify-content: flex-start;
+}
+
+.materials-compact-card--text h3 {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.materials-compact-card--text .compact-features {
+    align-items: flex-start;
+}
+
 .materials-compact-card:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     transform: translateY(-5px);
