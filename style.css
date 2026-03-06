@@ -2124,26 +2124,42 @@ main {
     text-align: center;
 }
 
-.materials-compact-card--text {
-    align-items: flex-start;
-    text-align: left;
+/* Equipment Card */
+.materials-compact-card--equipment {
+    background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
     justify-content: center;
 }
 
-.materials-compact-card--text h3 {
-    text-align: left;
-    width: 100%;
+.equipment-icon-large {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 24px;
-    font-size: 18px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
-.materials-compact-card--text .compact-features {
-    align-items: flex-start;
+.equipment-icon-large iconify-icon {
+    font-size: 50px;
+    color: var(--color-primary-red);
+}
+
+.materials-compact-card--equipment h3 {
+    font-size: 18px;
+    margin-bottom: 24px;
+}
+
+.materials-compact-card--equipment .compact-features {
+    width: 100%;
 }
 
 /* Combined Brands Card */
 .materials-brands-combined {
     padding: 40px 30px;
+    background: white;
 }
 
 .brands-row {
@@ -2169,6 +2185,22 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.brand-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.brand-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-text-muted);
+    margin-top: 8px;
 }
 
 .materials-compact-card:hover {
@@ -3134,6 +3166,10 @@ main {
         gap: 30px;
     }
 
+    .brands-row::before {
+        display: none;
+    }
+
     .materials-compact-card {
         padding: 24px 16px;
     }
@@ -3142,19 +3178,32 @@ main {
         padding: 30px 20px;
     }
 
+    .equipment-icon-large {
+        width: 80px;
+        height: 80px;
+    }
+
+    .equipment-icon-large iconify-icon {
+        font-size: 40px;
+    }
+
     .compact-icon,
     .compact-logo {
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
     }
 
     .materials-compact-card h3 {
-        font-size: 14px;
+        font-size: 16px;
+    }
+
+    .brand-label {
+        font-size: 11px;
     }
 
     .compact-features li {
-        font-size: 13px;
-        padding: 6px 0;
+        font-size: 14px;
+        padding: 8px 0;
     }
 
     .services__lead {
@@ -3559,8 +3608,48 @@ main {
         gap: 16px;
     }
 
+    .brands-row {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .brands-row::before {
+        display: none;
+    }
+
     .materials-compact-card {
         padding: 24px 20px;
+    }
+
+    .materials-brands-combined {
+        padding: 30px 20px;
+    }
+
+    .equipment-icon-large {
+        width: 80px;
+        height: 80px;
+    }
+
+    .equipment-icon-large iconify-icon {
+        font-size: 40px;
+    }
+
+    .compact-logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .materials-compact-card--equipment h3 {
+        font-size: 16px;
+    }
+
+    .brand-label {
+        font-size: 11px;
+    }
+
+    .compact-features li {
+        font-size: 14px;
+        padding: 8px 0;
     }
 
     .compact-icon,
