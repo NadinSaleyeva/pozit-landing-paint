@@ -389,12 +389,15 @@ main {
     margin-bottom: 60px;
     text-align: left;
     letter-spacing: 0;
-    line-height: 1.4;
+    line-height: 1.6;
     background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    padding: 16px 20px;
-    border-radius: 8px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
 }
 
 .product-actions {
