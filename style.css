@@ -953,9 +953,10 @@ main {
     color: rgba(255, 255, 255, 0.85);
     margin-bottom: 8px;
     line-height: 1.3;
-    min-height: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .car-type-price {
