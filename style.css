@@ -2075,64 +2075,160 @@ main {
     background: white;
     width: 100%;
     overflow: hidden;
+    position: relative;
 }
 
-.materials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+.materials-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/paint-booth.png') center/cover no-repeat;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.materials-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.materials-content {
     margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
-.material-card {
-    background: #FAFAFA;
-    border-radius: 16px;
-    padding: 30px 20px;
+/* Equipment Block */
+.materials-equipment {
+    background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
+    border-radius: 20px;
+    padding: 40px;
     text-align: center;
+    border: 1px solid #EAEAEA;
+}
+
+.equipment-icon {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.equipment-icon iconify-icon {
+    font-size: 40px;
+    color: var(--color-primary-red);
+}
+
+.materials-equipment h3 {
+    font-family: var(--font-secondary);
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-text-dark);
+    margin: 0 0 24px 0;
+}
+
+.equipment-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.equipment-features li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text-dark);
+}
+
+.equipment-features iconify-icon {
+    font-size: 20px;
+    color: var(--color-primary-red);
+}
+
+/* Brands Grid */
+.materials-brands {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.brand-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid #EAEAEA;
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    border: 1px solid transparent;
 }
 
-.material-card:hover {
-    background: white;
-    border-color: #EAEAEA;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+.brand-card:hover {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     transform: translateY(-5px);
+    border-color: var(--color-primary-red);
 }
 
-.material-card .m-icon {
-    font-size: 44px;
-    color: var(--color-primary-red);
-    transition: transform 0.3s ease;
-}
-
-.material-card:hover .m-icon {
-    transform: scale(1.1);
-}
-
-.material-card h3 {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--color-text-dark);
-    margin: 0;
-    font-family: var(--font-secondary);
-    text-transform: uppercase;
+.brand-logo {
+    width: 120px;
+    height: 120px;
     display: flex;
-    flex-direction: column;
-    gap: 6px;
-    line-height: 1.3;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    background: #FAFAFA;
+    border-radius: 16px;
+    padding: 20px;
 }
 
-.material-card h3 span {
-    font-size: 12px;
+.brand-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.brand-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.brand-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    font-size: 15px;
     font-weight: 500;
-    color: var(--color-text-muted);
-    text-transform: none;
-    font-family: 'Inter', sans-serif;
+    color: var(--color-text-dark);
+    border-bottom: 1px solid #F5F5F5;
+}
+
+.brand-features li:last-child {
+    border-bottom: none;
+}
+
+.brand-features iconify-icon {
+    font-size: 18px;
+    color: var(--color-primary-red);
+    flex-shrink: 0;
 }
 
 /* === INSURANCE SECTION === */
@@ -2847,6 +2943,29 @@ main {
         margin-top: 40px;
     }
 
+    .materials-content {
+        margin-top: 40px;
+        gap: 30px;
+    }
+
+    .materials-brands {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .materials-equipment {
+        padding: 30px 20px;
+    }
+
+    .brand-card {
+        padding: 30px 20px;
+    }
+
+    .equipment-features {
+        flex-direction: column;
+        gap: 12px;
+    }
+
     .services__lead {
         margin-top: 10px;
         margin-bottom: 40px;
@@ -3238,12 +3357,51 @@ main {
         padding: 60px 0;
     }
 
-    .materials-grid {
+    .materials-content {
         margin-top: 30px;
+        gap: 20px;
     }
 
-    .material-card {
-        padding: 20px 16px;
+    .materials-equipment {
+        padding: 24px 16px;
+    }
+
+    .equipment-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .equipment-icon iconify-icon {
+        font-size: 30px;
+    }
+
+    .materials-equipment h3 {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+
+    .equipment-features {
+        gap: 10px;
+    }
+
+    .equipment-features li {
+        font-size: 14px;
+    }
+
+    .brand-card {
+        padding: 24px 16px;
+    }
+
+    .brand-logo {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+        padding: 16px;
+    }
+
+    .brand-features li {
+        font-size: 14px;
+        padding: 10px 0;
     }
 
     /* FIX: Insurance section padding */
