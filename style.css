@@ -1621,6 +1621,26 @@ main {
     overflow: hidden;
 }
 
+.v3-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.20;
+    z-index: 0;
+}
+
+.v3-card > * {
+    position: relative;
+    z-index: 1;
+}
+
 .v3-title {
     font-family: var(--font-secondary);
     font-size: 32px;
@@ -1687,62 +1707,59 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .payment-title {
-    text-align: left;
+    text-align: center;
     margin-bottom: 20px;
 }
 
-.payment-cards-container {
+.payment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.payment-method-card {
+    background: white;
+    border-radius: 20px;
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border: 1px solid #F0F0F0;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-}
-
-.payment-card {
-    background: var(--color-white);
-    padding: 24px;
-    border-radius: 16px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
-    display: flex;
     align-items: center;
-    gap: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    justify-content: flex-start;
 }
 
-.payment-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+.payment-method-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
 }
 
-.payment-card__icon {
-    width: 60px;
-    height: 60px;
-    flex-shrink: 0;
-    background: rgba(231, 38, 40, 0.08);
-    /* Using the Ferrari red with low opacity */
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-primary-red);
-}
-
-.payment-card__info h4 {
+.payment-method-card h4 {
     font-family: var(--font-secondary);
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: 700;
     text-transform: uppercase;
     color: var(--color-text-dark);
-    margin-bottom: 6px;
+    margin: 0 0 12px 0;
     letter-spacing: 0.5px;
+    height: 66px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 }
 
-.payment-card__info p {
-    font-size: 13px;
+.payment-method-card p {
+    font-size: 14px;
     color: var(--color-text-muted);
-    line-height: 1.4;
+    line-height: 1.6;
     margin: 0;
+    min-height: 45px;
 }
 
 /* Map Section */
@@ -2107,14 +2124,14 @@ main {
 .materials-compact-grid {
     margin-top: 60px;
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     align-items: stretch;
 }
 
 .materials-compact-card {
     background: white;
-    border-radius: 16px;
+    border-radius: 20px;
     padding: 40px 30px;
     border: 1px solid #EAEAEA;
     transition: all 0.3s ease;
@@ -2122,12 +2139,20 @@ main {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    position: relative;
+    overflow: hidden;
 }
 
 /* Equipment Card */
 .materials-compact-card--equipment {
     background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
     justify-content: center;
+    border: 1px solid #E8E8E8;
+}
+
+.materials-compact-card--equipment::before {
+    background: linear-gradient(90deg, #666 0%, #999 100%);
 }
 
 .equipment-icon-large {
@@ -2145,6 +2170,11 @@ main {
 .equipment-icon-large iconify-icon {
     font-size: 50px;
     color: var(--color-primary-red);
+    --svg-stroke-width: 1;
+}
+
+.equipment-icon-large iconify-icon svg {
+    stroke-width: 1;
 }
 
 .materials-compact-card--equipment h3 {
@@ -2156,57 +2186,28 @@ main {
     width: 100%;
 }
 
-/* Combined Brands Card */
-.materials-brands-combined {
-    padding: 40px 30px;
-    background: white;
-}
-
-.brands-row {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
-    width: 100%;
-    position: relative;
-}
-
-.brands-row::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: #EAEAEA;
-    transform: translateX(-50%);
-}
-
-.brand-column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.brand-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.brand-label {
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--color-text-muted);
-    margin-top: 8px;
-}
+/* Combined Brands Card - REMOVED */
 
 .materials-compact-card:hover {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    transform: translateY(-8px);
     border-color: var(--color-primary-red);
+}
+
+.materials-compact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary-red) 0%, #E74C3C 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.materials-compact-card:hover::before {
+    opacity: 1;
 }
 
 .compact-icon {
@@ -2226,15 +2227,22 @@ main {
 }
 
 .compact-logo {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 24px auto;
-    background: #FAFAFA;
-    border-radius: 12px;
-    padding: 16px;
+    margin: 0 auto 20px auto;
+    background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.materials-compact-card:hover .compact-logo {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(206, 53, 60, 0.15);
 }
 
 .compact-logo img {
@@ -2245,12 +2253,13 @@ main {
 
 .materials-compact-card h3 {
     font-family: var(--font-secondary);
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     text-transform: uppercase;
     color: var(--color-text-dark);
-    margin: 0 0 16px 0;
+    margin: 0 0 20px 0;
     line-height: 1.3;
+    letter-spacing: 0.5px;
 }
 
 .compact-features {
@@ -2263,12 +2272,17 @@ main {
 .compact-features li {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 10px 0;
+    gap: 12px;
+    padding: 12px 0;
     font-size: 15px;
     font-weight: 500;
     color: var(--color-text-dark);
     border-bottom: 1px solid #F5F5F5;
+    transition: all 0.2s ease;
+}
+
+.materials-compact-card:hover .compact-features li {
+    padding-left: 4px;
 }
 
 .compact-features li:last-child {
@@ -2276,37 +2290,39 @@ main {
 }
 
 .compact-features iconify-icon {
-    font-size: 18px;
+    font-size: 20px;
     color: var(--color-primary-red);
     flex-shrink: 0;
+    transition: transform 0.2s ease;
 }
 
-.compact-features {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-}
-
-.compact-features li {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 0;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--color-text-dark);
-    border-bottom: 1px solid #F5F5F5;
-}
-
-.compact-features li:last-child {
-    border-bottom: none;
-}
-
-.compact-features iconify-icon {
-    font-size: 16px;
-    color: var(--color-primary-red);
+.feature-check {
+    width: 20px;
+    height: 20px;
     flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.star-icon {
+    width: 20px;
+    height: 20px;
+    color: #FFD700;
+}
+
+.faq-arrow {
+    width: 20px;
+    height: 20px;
+}
+
+.menu-arrow {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.materials-compact-card:hover .compact-features iconify-icon {
+    transform: scale(1.1);
 }
 
 /* Equipment Block */
@@ -2496,9 +2512,8 @@ main {
 }
 
 .guarantee-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    display: flex;
+    justify-content: center;
     margin-top: 60px;
 }
 
@@ -2515,50 +2530,40 @@ main {
     align-items: center;
 }
 
+.guarantee-card--single {
+    max-width: 600px;
+    width: 100%;
+}
+
+.guarantee-card--single ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+}
+
+.guarantee-card--single li {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--color-text-dark);
+    padding: 16px 0 16px 36px;
+    position: relative;
+    font-weight: 500;
+}
+
+.guarantee-card--single li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary-red);
+    font-weight: 700;
+    font-size: 20px;
+}
+
 .guarantee-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-}
-
-.guarantee-card--featured {
-    background: linear-gradient(135deg, #FFFFFF 0%, #FFF5F5 100%);
-    border: 2px solid var(--color-primary-red);
-}
-
-.guarantee-icon {
-    width: 80px;
-    height: 80px;
-    background: #FAFAFA;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 24px;
-    padding: 16px;
-}
-
-.guarantee-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.guarantee-card h3 {
-    font-family: var(--font-secondary);
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: var(--color-text-dark);
-    text-transform: uppercase;
-    line-height: 1.3;
-}
-
-.guarantee-card p {
-    font-size: 15px;
-    line-height: 1.6;
-    color: var(--color-text-muted);
-    margin-bottom: 20px;
-    flex-grow: 1;
 }
 
 .guarantee-badge {
@@ -2577,38 +2582,16 @@ main {
     .insurance-grid {
         grid-template-columns: 1fr;
     }
-
-    .guarantee-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
 }
 
 @media (max-width: 576px) {
-    .guarantee-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .guarantee-card {
+    .guarantee-card--single {
         padding: 32px 24px;
     }
 
-    .guarantee-icon {
-        width: 70px;
-        height: 70px;
-    }
-
-    .guarantee-icon iconify-icon {
-        font-size: 36px;
-    }
-
-    .guarantee-card h3 {
-        font-size: 18px;
-    }
-
-    .guarantee-card p {
-        font-size: 14px;
+    .guarantee-card--single li {
+        font-size: 16px;
+        padding: 12px 0 12px 32px;
     }
 
     .insurance-card {
@@ -2939,20 +2922,23 @@ main {
     .payment-title {
         text-align: center;
         margin-top: 30px;
-        /* add some top margin since it stacks under CTA */
     }
 
-    .payment-cards-container {
-        align-items: center;
+    .payment-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
 
-    .payment-card {
-        width: 100%;
-        justify-content: center;
-        text-align: center;
-        flex-direction: column;
-        padding: 20px;
-        gap: 10px;
+    .payment-method-card {
+        padding: 28px 20px;
+    }
+
+    .payment-method-card h4 {
+        font-size: 16px;
+    }
+
+    .payment-method-card p {
+        font-size: 13px;
     }
 }
 
@@ -3218,21 +3204,9 @@ main {
         gap: 16px;
     }
 
-    .brands-row {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .brands-row::before {
-        display: none;
-    }
-
     .materials-compact-card {
-        padding: 24px 16px;
-    }
-
-    .materials-brands-combined {
-        padding: 30px 20px;
+        padding: 28px 20px;
+        border-radius: 16px;
     }
 
     .equipment-icon-large {
@@ -3244,23 +3218,39 @@ main {
         font-size: 40px;
     }
 
-    .compact-icon,
     .compact-logo {
         width: 70px;
         height: 70px;
+        margin-bottom: 16px;
+        padding: 14px;
     }
 
     .materials-compact-card h3 {
         font-size: 16px;
+        margin-bottom: 16px;
     }
 
-    .brand-label {
-        font-size: 11px;
+    .equipment-icon-large {
+        width: 70px;
+        height: 70px;
+    }
+
+    .equipment-icon-large iconify-icon {
+        font-size: 36px;
+    }
+
+    .materials-compact-card--equipment h3 {
+        font-size: 15px;
     }
 
     .compact-features li {
         font-size: 14px;
-        padding: 8px 0;
+        padding: 10px 0;
+        gap: 10px;
+    }
+
+    .compact-features iconify-icon {
+        font-size: 18px;
     }
 
     .services__lead {
@@ -3665,52 +3655,19 @@ main {
         gap: 16px;
     }
 
-    .brands-row {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .brands-row::before {
-        display: none;
-    }
-
     .materials-compact-card {
-        padding: 24px 20px;
-    }
-
-    .materials-brands-combined {
         padding: 30px 20px;
+        border-radius: 16px;
     }
 
-    .equipment-icon-large {
+    .compact-logo {
         width: 80px;
         height: 80px;
+        margin-bottom: 16px;
+        padding: 16px;
     }
 
-    .equipment-icon-large iconify-icon {
-        font-size: 40px;
-    }
-
-    .compact-logo {
-        width: 70px;
-        height: 70px;
-    }
-
-    .materials-compact-card--equipment h3 {
-        font-size: 16px;
-    }
-
-    .brand-label {
-        font-size: 11px;
-    }
-
-    .compact-features li {
-        font-size: 14px;
-        padding: 8px 0;
-    }
-
-    .compact-icon,
-    .compact-logo {
+    .compact-icon {
         width: 60px;
         height: 60px;
     }
@@ -3724,8 +3681,12 @@ main {
     }
 
     .compact-features li {
-        font-size: 14px;
+        font-size: 13px;
         padding: 8px 0;
+    }
+
+    .compact-features iconify-icon {
+        font-size: 16px;
     }
 
     /* FIX: Insurance section padding */
@@ -3751,21 +3712,14 @@ main {
         padding: 28px 20px;
     }
 
-    .guarantee-icon {
-        width: 70px;
-        height: 70px;
+    /* FIX: Guarantee section padding for narrow screens */
+    .guarantee-card--single {
+        padding: 28px 20px;
     }
 
-    .guarantee-icon iconify-icon {
-        font-size: 36px;
-    }
-
-    .guarantee-card h3 {
-        font-size: 17px;
-    }
-
-    .guarantee-card p {
-        font-size: 14px;
+    .guarantee-card--single li {
+        font-size: 15px;
+        padding: 10px 0 10px 28px;
     }
 
     /* FIX: FAQ section padding */
@@ -3901,14 +3855,17 @@ main {
         border-radius: 8px;
     }
 
-    /* FIX: Payment card layout */
-    .payment-card {
-        padding: 16px;
+    /* FIX: Payment method layout */
+    .payment-method-card {
+        padding: 24px 18px;
     }
 
-    .payment-card__icon {
-        width: 48px;
-        height: 48px;
+    .payment-method-card h4 {
+        font-size: 15px;
+    }
+
+    .payment-method-card p {
+        font-size: 12px;
     }
 }
 
