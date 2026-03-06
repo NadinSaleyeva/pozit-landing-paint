@@ -2528,17 +2528,19 @@ main {
 .guarantee-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--color-primary-red) 0%, #B91C1C 100%);
+    background: #FAFAFA;
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 24px;
-    color: white;
+    padding: 16px;
 }
 
-.guarantee-icon iconify-icon {
-    font-size: 40px;
+.guarantee-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .guarantee-card h3 {
