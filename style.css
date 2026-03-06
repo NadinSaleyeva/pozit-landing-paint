@@ -385,19 +385,16 @@ main {
     font-size: 18px;
     font-weight: 500;
     color: var(--color-text-dark);
-    max-width: 520px;
     margin-bottom: 60px;
     text-align: left;
     letter-spacing: 0;
     line-height: 1.6;
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 4px 8px;
-    border-radius: 4px;
-    display: inline;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
+    text-shadow:
+        0 0 20px rgba(255, 255, 255, 1),
+        0 0 30px rgba(255, 255, 255, 1),
+        0 0 40px rgba(255, 255, 255, 0.9),
+        0 0 50px rgba(255, 255, 255, 0.8),
+        0 0 60px rgba(255, 255, 255, 0.7);
 }
 
 .product-actions {
