@@ -365,13 +365,7 @@ main {
     margin-bottom: 0px;
     margin-left: 0;
     padding-left: 0;
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    padding: 8px 16px;
-    border-radius: 6px;
-    display: inline-block;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 255, 255, 0.7);
 }
 
 .product-title {
@@ -382,16 +376,9 @@ main {
     color: var(--color-text-dark);
     margin-bottom: 20px;
     margin-left: 0;
-    /* Removed negative margin to prevent overflow */
     padding-left: 0;
     max-width: 100%;
-    background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    padding: 16px 20px;
-    border-radius: 8px;
-    display: inline-block;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 255, 255, 0.7);
 }
 
 .product-subtitle {
@@ -403,12 +390,7 @@ main {
     text-align: left;
     letter-spacing: 0;
     line-height: 1.4;
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    padding: 16px 20px;
-    border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.7), 0 0 45px rgba(255, 255, 255, 0.5);
 }
 
 .product-actions {
