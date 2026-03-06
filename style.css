@@ -389,7 +389,7 @@ main {
     text-align: left;
     letter-spacing: 0;
     line-height: 1.6;
-    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.9);
+    -webkit-text-stroke: 4px rgba(255, 255, 255, 0.9);
     paint-order: stroke fill;
     text-shadow:
         0 0 10px rgba(255, 255, 255, 0.8),
