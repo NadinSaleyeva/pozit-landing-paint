@@ -351,6 +351,10 @@ main {
 .hero__text-area {
     padding-left: 0;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 450px;
 }
 
 .brand-name {
