@@ -287,12 +287,58 @@
                                 <span class="price-card__num">03</span>
                                 <h3 class="price-card__title">Полная<br>покраска</h3>
                             </div>
-                            <ul class="price-list">
-                                <li><span>Седан</span><strong>от 5000 руб.</strong></li>
-                                <li><span>Универсал / Хэтчбек</span><strong>от 5500 руб.</strong></li>
-                                <li><span>Кроссовер / Внедорожник</span><strong>от 5500 руб.</strong></li>
-                                <li><span>Премиум-авто</span><strong>от 6000 руб.</strong></li>
-                            </ul>
+                            <div class="car-types-grid">
+                                <!-- Sedan -->
+                                <div class="car-type-item">
+                                    <div class="car-icon">
+                                        <svg viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15 28C15 25.7909 16.7909 24 19 24C21.2091 24 23 25.7909 23 28C23 30.2091 21.2091 32 19 32C16.7909 32 15 30.2091 15 28Z" fill="currentColor"/>
+                                            <path d="M57 28C57 25.7909 58.7909 24 61 24C63.2091 24 65 25.7909 65 28C65 30.2091 63.2091 32 61 32C58.7909 32 57 30.2091 57 28Z" fill="currentColor"/>
+                                            <path d="M8 20L15 12H30L35 8H45L50 12H65L72 20V28H68C68 24.6863 65.3137 22 62 22C58.6863 22 56 24.6863 56 28H24C24 24.6863 21.3137 22 18 22C14.6863 22 12 24.6863 12 28H8V20Z" fill="currentColor"/>
+                                        </svg>
+                                    </div>
+                                    <span class="car-type-label">Седан</span>
+                                    <strong class="car-type-price">от 5000 руб.</strong>
+                                </div>
+                                <!-- Hatchback/Wagon -->
+                                <div class="car-type-item">
+                                    <div class="car-icon">
+                                        <svg viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15 28C15 25.7909 16.7909 24 19 24C21.2091 24 23 25.7909 23 28C23 30.2091 21.2091 32 19 32C16.7909 32 15 30.2091 15 28Z" fill="currentColor"/>
+                                            <path d="M57 28C57 25.7909 58.7909 24 61 24C63.2091 24 65 25.7909 65 28C65 30.2091 63.2091 32 61 32C58.7909 32 57 30.2091 57 28Z" fill="currentColor"/>
+                                            <path d="M8 20L15 12H30L35 8H50L55 12H65L70 16V28H68C68 24.6863 65.3137 22 62 22C58.6863 22 56 24.6863 56 28H24C24 24.6863 21.3137 22 18 22C14.6863 22 12 24.6863 12 28H8V20Z" fill="currentColor"/>
+                                            <path d="M55 12V16H70V16L55 12Z" fill="currentColor"/>
+                                        </svg>
+                                    </div>
+                                    <span class="car-type-label">Универсал / Хэтчбек</span>
+                                    <strong class="car-type-price">от 5500 руб.</strong>
+                                </div>
+                                <!-- Crossover/SUV -->
+                                <div class="car-type-item">
+                                    <div class="car-icon">
+                                        <svg viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15 28C15 25.7909 16.7909 24 19 24C21.2091 24 23 25.7909 23 28C23 30.2091 21.2091 32 19 32C16.7909 32 15 30.2091 15 28Z" fill="currentColor"/>
+                                            <path d="M57 28C57 25.7909 58.7909 24 61 24C63.2091 24 65 25.7909 65 28C65 30.2091 63.2091 32 61 32C58.7909 32 57 30.2091 57 28Z" fill="currentColor"/>
+                                            <path d="M8 18L15 8H30L35 4H45L50 8H65L72 18V28H68C68 24.6863 65.3137 22 62 22C58.6863 22 56 24.6863 56 28H24C24 24.6863 21.3137 22 18 22C14.6863 22 12 24.6863 12 28H8V18Z" fill="currentColor"/>
+                                        </svg>
+                                    </div>
+                                    <span class="car-type-label">Кроссовер / Внедорожник</span>
+                                    <strong class="car-type-price">от 5500 руб.</strong>
+                                </div>
+                                <!-- Premium -->
+                                <div class="car-type-item">
+                                    <div class="car-icon">
+                                        <svg viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15 28C15 25.7909 16.7909 24 19 24C21.2091 24 23 25.7909 23 28C23 30.2091 21.2091 32 19 32C16.7909 32 15 30.2091 15 28Z" fill="currentColor"/>
+                                            <path d="M57 28C57 25.7909 58.7909 24 61 24C63.2091 24 65 25.7909 65 28C65 30.2091 63.2091 32 61 32C58.7909 32 57 30.2091 57 28Z" fill="currentColor"/>
+                                            <path d="M10 22L17 14H28L32 10H48L52 14H63L70 22V28H68C68 24.6863 65.3137 22 62 22C58.6863 22 56 24.6863 56 28H24C24 24.6863 21.3137 22 18 22C14.6863 22 12 24.6863 12 28H10V22Z" fill="currentColor"/>
+                                            <ellipse cx="40" cy="16" rx="3" ry="2" fill="currentColor"/>
+                                        </svg>
+                                    </div>
+                                    <span class="car-type-label">Премиум-авто</span>
+                                    <strong class="car-type-price">от 6000 руб.</strong>
+                                </div>
+                            </div>
                         </div>
                         <div class="price-card fade-up delay-300">
                             <div class="price-card__head">
