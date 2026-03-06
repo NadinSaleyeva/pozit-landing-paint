@@ -2107,7 +2107,7 @@ main {
 .materials-compact-grid {
     margin-top: 60px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1.5fr;
     gap: 20px;
     align-items: stretch;
 }
@@ -2115,26 +2115,26 @@ main {
 .materials-compact-card {
     background: white;
     border-radius: 16px;
-    padding: 30px 20px;
+    padding: 40px 30px;
     border: 1px solid #EAEAEA;
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    min-height: 280px;
 }
 
 .materials-compact-card--text {
     align-items: flex-start;
     text-align: left;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .materials-compact-card--text h3 {
     text-align: left;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    font-size: 18px;
 }
 
 .materials-compact-card--text .compact-features {
@@ -2149,8 +2149,20 @@ main {
 .brands-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 50px;
     width: 100%;
+    position: relative;
+}
+
+.brands-row::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #EAEAEA;
+    transform: translateX(-50%);
 }
 
 .brand-column {
@@ -2182,12 +2194,12 @@ main {
 }
 
 .compact-logo {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 24px auto;
     background: #FAFAFA;
     border-radius: 12px;
     padding: 16px;
@@ -2207,6 +2219,34 @@ main {
     color: var(--color-text-dark);
     margin: 0 0 16px 0;
     line-height: 1.3;
+}
+
+.compact-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.compact-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-text-dark);
+    border-bottom: 1px solid #F5F5F5;
+}
+
+.compact-features li:last-child {
+    border-bottom: none;
+}
+
+.compact-features iconify-icon {
+    font-size: 18px;
+    color: var(--color-primary-red);
+    flex-shrink: 0;
 }
 
 .compact-features {
