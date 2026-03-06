@@ -2107,7 +2107,7 @@ main {
 .materials-compact-grid {
     margin-top: 60px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     align-items: stretch;
 }
@@ -2139,6 +2139,24 @@ main {
 
 .materials-compact-card--text .compact-features {
     align-items: flex-start;
+}
+
+/* Combined Brands Card */
+.materials-brands-combined {
+    padding: 40px 30px;
+}
+
+.brands-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    width: 100%;
+}
+
+.brand-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .materials-compact-card:hover {
@@ -3067,12 +3085,21 @@ main {
 
     .materials-compact-grid {
         margin-top: 40px;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr;
         gap: 16px;
+    }
+
+    .brands-row {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 
     .materials-compact-card {
         padding: 24px 16px;
+    }
+
+    .materials-brands-combined {
+        padding: 30px 20px;
     }
 
     .compact-icon,
