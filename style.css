@@ -2109,6 +2109,7 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    align-items: stretch;
 }
 
 .materials-compact-card {
@@ -2121,6 +2122,7 @@ main {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    min-height: 280px;
 }
 
 .materials-compact-card:hover {
