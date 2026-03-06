@@ -915,6 +915,13 @@ main {
     gap: 20px;
 }
 
+@media (min-width: 768px) {
+    .car-types-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+    }
+}
+
 .car-type-item {
     display: flex;
     flex-direction: column;
