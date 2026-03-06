@@ -497,39 +497,41 @@ main {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 35px 30px;
-    background: var(--color-bg);
-    border-radius: 16px;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    padding: 40px 32px;
+    background: #FAFAFA;
+    border-radius: 20px;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .benefit-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
     background: var(--color-white);
-    border-color: rgba(206, 53, 60, 0.1);
+    border-color: rgba(206, 53, 60, 0.08);
 }
 
 .benefit-item__icon {
-    margin-bottom: 25px;
+    margin-bottom: 28px;
     color: var(--color-primary-red);
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 64px;
-    height: 64px;
-    background: rgba(206, 53, 60, 0.07);
-    border-radius: 14px;
+    width: 72px;
+    height: 72px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
     flex-shrink: 0;
-    transition: transform 0.4s ease, background 0.4s ease;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(206, 53, 60, 0.1);
 }
 
 .benefit-item:hover .benefit-item__icon {
-    transform: scale(1.1);
-    background: rgba(206, 53, 60, 0.12);
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 16px rgba(206, 53, 60, 0.12);
 }
 
 .benefit-item__icon svg {
@@ -539,20 +541,25 @@ main {
 
 .benefit-item__title {
     font-family: var(--font-secondary);
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     color: var(--color-text-dark);
-    line-height: 1.2;
-    letter-spacing: 0.5px;
+    line-height: 1.3;
+    letter-spacing: 0.8px;
 }
 
 .benefit-item__text {
     font-size: 14px;
-    color: var(--color-text-muted);
-    line-height: 1.6;
-    font-weight: 500;
+    color: #666666;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.benefit-item__text strong {
+    font-weight: 600;
+    color: var(--color-text-dark);
 }
 
 /* Decoration for hover state */
@@ -562,9 +569,9 @@ main {
     bottom: 0;
     left: 0;
     width: 0;
-    height: 3px;
+    height: 2px;
     background: var(--color-primary-red);
-    transition: width 0.4s ease;
+    transition: width 0.3s ease;
 }
 
 .benefit-item:hover::after {
